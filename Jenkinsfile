@@ -1,26 +1,20 @@
 pipeline {
     agent any
     stages {
-        stage('Clone Repository') {
+        stage('Echo Hello World') {
             steps {
-                git 'https://github.com/abdullah50053/ghw-deploy2.git'
+                echo 'Hello, Jenkins!'
             }
         }
-        stage('Install Dependencies') {
+        stage('Check System Info') {
             steps {
-                sh 'npm install'
+                sh 'uname -a'
+                sh 'whoami'
             }
         }
-        stage('Run Tests') {
+        stage('List Files in Workspace') {
             steps {
-                sh 'npm test'
-            }
-        }
-        stage('Deploy to Vercel') {
-            steps {
-                withCredentials([string(credentialsId: 'vercel-token', variable: 'VERCEL_TOKEN')]) {
-                    sh 'npx vercel --prod --token $VERCEL_TOKEN'
-                }
+                sh 'ls -lah'
             }
         }
     }
