@@ -12,7 +12,7 @@ pipeline {
                 sh 'whoami'
             }
         }
-        stage('Echo Hello World') {
+        stage('Echo World') {
             steps {
                 echo 'Hello, Global Hack Week!'
             }
