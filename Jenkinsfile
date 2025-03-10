@@ -12,6 +12,11 @@ pipeline {
                 sh 'whoami'
             }
         }
+        stage('Echo Hello World') {
+            steps {
+                echo 'Hello, Global Hack Week!'
+            }
+        }
         stage('List Files in Workspace') {
             steps {
                 sh 'ls -lah'
