@@ -17,6 +17,11 @@ pipeline {
                 echo 'Hello, Global Hack Week!'
             }
         }
+        stage('Echo GHW') {
+            steps {
+                echo 'Hello again, Global Hack Week!'
+            }
+        }
         stage('List Files in Workspace') {
             steps {
                 sh 'ls -lah'
